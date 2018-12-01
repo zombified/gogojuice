@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>GoGoJuice</title>
+  <meta name="description" content="Track your automotive go-go juice usage.">
+	<meta name="author" content="Joel Kleier">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:image" content="icons/icon-512.png">
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="gogojuice.webmanifest">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>GoGoJuice</h1>
+    <button id="settingsbutton">Settings</button>
+  </header>
+  <main>
+    <section id="settings">
+      <h2>Settings</h2>
+      <form class='settings-form'>
+        <textarea id='vehiclelist' title='List of vehicles, one per line' name='vehiclelist' placeholder='list of vehicles, one per line' cols='50' rows='4'></textarea>
+        <label class='helplabel' for='vehiclelist'>list of vehicles, one per line</label>
+        <button type="button" id='settingssavebutton'>save</button>
+        <div class='toolbar'>
+          <button id='clearbutton' type='button'>clear all data</button>
+          <button id='exportbutton' type='button'>export to json</button>
+        </div>
+      </form>
+    </section>
+    <section id="form">
+      <h2>Add Entry</h2>
+      <form class='flex-grid add-form'>
+        <select id='vehicleselection' name='vehicle' class='flex-col'></select>
+        <input id='distanceinput' name='distance' class='flex-col' type='text' placeholder="distance" pattern="\d+" title="Distance Driven (a whole number)">
+        <input id='costinput' name='cost' class='flex-col' type='text' placeholder="cost" pattern="\d+\.\d+" title="Cost of Fuel (a decimal number)" >
+        <input id='fuelinput' name='fuel' class='flex-col' type='text' placeholder="fuel" pattern="\d+\.\d+" title="Amount of Fuel (a decimal number)">
+        <button id='addbutton' type="button">add</button>
+      </form>
+    </section>
+    <section id="content">
+      <table id="datatable" class="records">
+        <caption>Data</caption>
+        <thead>
+          <tr>
+            <th>Vehicle</th>
+            <th>Odometer</th>
+            <th>Cost</th>
+            <th>Fuel</th>
+            <th>Date</th>
+            <th>Cost/Fuel</th>
+            <th>Distance/Fuel</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </section>
+  </main>
+  <footer>
+    <p><a href='#'>app source code</a></p>
+  </footer>
+</body>
+</html>
